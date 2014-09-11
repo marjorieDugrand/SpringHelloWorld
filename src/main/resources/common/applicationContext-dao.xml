@@ -11,7 +11,7 @@
         <property name="username" value="${database.username}"/>
         <property name="password" value="${database.password}"/>
         <property name="testOnBorrow" value="true"/>
-        <property name="validationQuery" value="SELECT 1" />
+        <property name="validationQuery" value="VALUES 1" /> <!--  http://stackoverflow.com/a/10684260/1355930 for variants -->
     </bean>
 
     <bean id="transactionManager"
