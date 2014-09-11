@@ -1,0 +1,42 @@
+<html>
+#set ($pageTitle = "Edit User")
+#parse( "/head.vm" )
+
+<body>
+
+<div class="container">
+
+    <div class="two-thirds column">
+        <h3>Edit User</h3>
+
+        <form method="POST" action="#springUrl("/user/save")">
+            #springFormHiddenInput("user.id", "")
+            <p>
+                User Name :
+                #springFormInput("user.username", "")
+            </p>
+            <p>Password :
+                #springFormPasswordInput("user.password", "")
+            </p>
+            <p>Email :
+                #springFormInput("user.emailAddress", "")
+            </p>
+            <p>First name :
+                #springFormInput("user.firstName", "")
+            </p>
+            <p>Last name :
+                #springFormInput("user.lastName", "")
+            </p>
+			<input type="submit" value="Save" />
+        </form>
+
+		#if ($user.id)
+            <p><a href="#springUrl("/user/delete")/${user.id}">Delete this user</a></p>
+		#end
+    </div>
+
+
+
+</div>
+</body>
+</html>

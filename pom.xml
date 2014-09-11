@@ -86,17 +86,13 @@
     </repositories>
 
     <dependencies>
-        <!--  jstl and servlets -->
+        <!--  velocity -->
         <dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
+
 
         <!-- JPA With Its Requirements -->
         <!-- Hibernate stuff -->
