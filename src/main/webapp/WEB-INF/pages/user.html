@@ -1,16 +1,18 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-      
-	<title th:text="#{userEdit.title}"> Edit User </title>
+    
+    <head>
+		<title th:text="#{userEdit.title}">Edit User</title>
+    </head> 
 
 	<body>
 
 		<div class="container">
 
 		    <div class="two-thirds column">
-        		<h3 th:text="{userEdit.title}">Edit</h3>
+        		<h3 th:text="#{userEdit.title}">Edit</h3>
 
 				<form method="POST" action="user.html" th:action="@{/user/save}" th:object="${user}">
 					<input th:field="${user.id}"/>

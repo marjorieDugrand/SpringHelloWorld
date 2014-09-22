@@ -1,12 +1,12 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
       
-	<title th:text="#{home.title}"> Hello World! </title>
+	<head>
+		<title th:text="#{home.title}"> hello world </title>
+	</head>
 
-<!-- The head.jsp, styles and divs are all taken from Skeleton http://www.getskeleton.com/ 
-- this is just an example showing how styles, images and page segment includes can be done-->
 	<body>
 
 		<div class="container">
@@ -16,20 +16,16 @@
     		</div>
 
 	    	<div class="two-thirds column">
-    	  	  <h3 th:text="#{home.welcome}">Hello world!</h3>
+    	  	   <p th:text="#{home.welcome}">Hello world!</p>
 
         		<table>
             		<thead>
             			<tr>
-            				<td>ID</td>
-            				<td>Name</td>
+            				<td th:text="#{user.id}">ID</td>
+            				<td th:text="#{user.name}">Name</td>
             			</tr>
             		</thead>
             		<tbody>
-                		<tr>
-                			<th>ID</th>
-                			<th>NAME</th>
-                		</tr>
                 		<tr th:each="user : ${users}">
                 			<td th:text="${user.id}"> <a href="user.html" th:href="@{/user/view/${user.id}"></a> 123 </td>
 	                		<td th:text="${user.username}"> Matthew </td>
