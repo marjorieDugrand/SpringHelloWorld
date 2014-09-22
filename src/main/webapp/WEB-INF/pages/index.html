@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
       
-	<head>
+	<head th:include="head::header">
 		<title th:text="#{home.title}"> hello world </title>
 	</head>
 
@@ -16,7 +16,7 @@
     		</div>
 
 	    	<div class="two-thirds column">
-    	  	   <p th:text="#{home.welcome}">Hello world!</p>
+    	  	   <h3 th:text="#{home.welcome}">Hello world!</h3>
 
         		<table>
             		<thead>
