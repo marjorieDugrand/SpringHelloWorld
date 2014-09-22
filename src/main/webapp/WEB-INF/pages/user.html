@@ -15,29 +15,35 @@
         		<h3 th:text="#{userEdit.title}">Edit</h3>
 
 				<form method="POST" action="user.html" th:action="@{/user/save}" th:object="${user}">
-					<input th:field="${user.id}"/>
+					<p th:field="${user.id}"/>
 				
-					<p th:text="${user.username}">
+					<p th:text="#{userEdit.username}">
 						User Name :
 					</p>
-					<p th:text="${user.password}">
+						<input value="username" th:value="${user.username}"/>
+					<p th:text="#{userEdit.password}">
 						Password :
 					</p>
-					<p th:text="${user.emailAddress}">
+						<input value="password" th:value="${user.password}"/>
+					<p th:text="#{userEdit.email}">
 						Email :
 					</p>
-					<p th:text="${user.firstName}">
+						<input value="email" th:value="${user.emailAddress}"/>
+					<p th:text="#{userEdit.firstName}">
 						First name :
 					</p>
-					<p th:text="${user.lastName}">
+						<input value="firstName" th:value="${user.firstName}"/>
+					<p th:text="#{userEdit.lastName}">
 						Last name :
 					</p>
+						<input value="lastName" th:value="${user.lastName}"/>
 					
 					<input type="submit" value="Save" th:value="#{userEdit.submit}" />
 				</form>
 	
 				<p th:if="${user.id}">
-					<a href="user.html" th:href="@{/user/delete/${user.id}}">
+					<a href="user.html" th:href="@{/user/delete/${user.id}}"
+						th:text="#{userEdit.delete}">
 						Delete this user
 					</a>
 				</p>
