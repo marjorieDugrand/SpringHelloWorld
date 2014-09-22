@@ -1,15 +1,17 @@
-<html>
-#set ($pageTitle = "Edit User")
-#parse( "/head.vm" )
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+	<title th:text="#{user.title}"> Edit User </title>
 <body>
 
 <div class="container">
 
     <div class="two-thirds column">
-        <h3>Edit User</h3>
+        <h3 th:text="{user.title}">Edit</h3>
 
-        <form method="POST" action="#springUrl("/user/save")">
+        <form method="POST" action="user.html" th:action="@{/user/save}">
             #springFormHiddenInput("user.id", "")
             <p>
                 User Name :
