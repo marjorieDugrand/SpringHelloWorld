@@ -27,7 +27,9 @@
             		</thead>
             		<tbody>
                 		<tr th:each="user : ${users}">
-                			<td th:text="${user.id}"> <a href="user.html" th:href="@{/user/view/${user.id}"></a> 123 </td>
+                			<td>
+                				<a th:text="${user.id}" href="user.html" th:href="@{'/user/view/'+${user.id}}">13</a>
+                			</td>
 	                		<td th:text="${user.username}"> Matthew </td>
                 		</tr>
 					</tbody>

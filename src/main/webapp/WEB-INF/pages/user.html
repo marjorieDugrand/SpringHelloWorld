@@ -14,34 +14,34 @@
 		    <div class="two-thirds column">
         		<h3 th:text="#{userEdit.title}">Edit</h3>
 
-				<form method="POST" action="user.html" th:action="@{/user/save}" th:object="${user}">
-					<input id="id" name="id" value="" th:value="*{id}" type="hidden"/>
+				<form method="POST" action="#" th:action="@{/user/save}" th:object="${user}">
+					<input id="id" name="id" th:value="*{id}" type="hidden"/>
 				
 					<p th:text="#{userEdit.username}">
 						User Name :
 					</p>
-					<input id="username" value="" th:value="*{username}"/>
+					<input id="username" type="text" th:field="*{username}"/>
 					<p th:text="#{userEdit.password}">
 						Password :
 					</p>
-					<input id="password" type="password" value="" th:value="*{password}"/>
+					<input id="password" type="password" th:field="*{password}"/>
 					<p th:text="#{userEdit.email}">
 						Email :
 					</p>
-					<input id="email" value="" th:value="*{emailAddress}"/>
+					<input id="email" type="text" th:field="*{emailAddress}"/>
 					<p th:text="#{userEdit.firstName}">
 						First name :
 					</p>
-					<input id="firstname" value="" th:value="*{firstName}"/>
+					<input id="firstname" type="text" th:field="*{firstName}"/>
 					<p th:text="#{userEdit.lastName}">
 						Last name :
 					</p>
-					<input id="lastname" value="" th:value="*{lastName}"/>
+					<input id="lastname" type="text" th:field="*{lastName}"/>
 					
 					<input id="submit" type="submit" value="Save" th:value="#{userEdit.submit}" />
 
-					<p th:if="${user.id}">
-						<a href="index.html" th:href="@{/user/delete/${user.id}}"
+					<p th:if="*{id}">
+						<a href="index.html" th:href="@{'/user/delete/'+*{id}}"
 							th:text="#{userEdit.delete}">
 							Delete this user
 						</a>
