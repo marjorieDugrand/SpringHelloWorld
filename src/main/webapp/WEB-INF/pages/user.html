@@ -3,42 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
       
-	<title th:text="#{user.title}"> Edit User </title>
-<body>
+	<title th:text="#{userEdit.title}"> Edit User </title>
 
-<div class="container">
+	<body>
 
-    <div class="two-thirds column">
-        <h3 th:text="{user.title}">Edit</h3>
+		<div class="container">
 
-        <form method="POST" action="user.html" th:action="@{/user/save}">
-            #springFormHiddenInput("user.id", "")
-            <p>
-                User Name :
-                #springFormInput("user.username", "")
-            </p>
-            <p>Password :
-                #springFormPasswordInput("user.password", "")
-            </p>
-            <p>Email :
-                #springFormInput("user.emailAddress", "")
-            </p>
-            <p>First name :
-                #springFormInput("user.firstName", "")
-            </p>
-            <p>Last name :
-                #springFormInput("user.lastName", "")
-            </p>
-			<input type="submit" value="Save" />
-        </form>
+		    <div class="two-thirds column">
+        		<h3 th:text="{userEdit.title}">Edit</h3>
 
-		#if ($user.id)
-            <p><a href="#springUrl("/user/delete")/${user.id}">Delete this user</a></p>
-		#end
-    </div>
-
-
-
-</div>
-</body>
+				<form method="POST" action="user.html" th:action="@{/user/save}" th:object="${user}">
+					<input th:field="${user.id}"/>
+				
+					<p th:text="${user.username}">
+						User Name :
+					</p>
+					<p th:text="${user.password}">
+						Password :
+					</p>
+					<p th:text="${user.emailAddress}">
+						Email :
+					</p>
+					<p th:text="${user.firstName}">
+						First name :
+					</p>
+					<p th:text="${user.lastName}">
+						Last name :
+					</p>
+					
+					<input type="submit" value="Save" th:value="#{userEdit.submit}" />
+				</form>
+	
+				<p th:if="${user.id}">
+					<a href="user.html" th:href="@{/user/delete/${user.id}}">
+						Delete this user
+					</a>
+				</p>
+			</div>
+		</div>
+	</body>
 </html>
