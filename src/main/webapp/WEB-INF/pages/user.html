@@ -15,38 +15,40 @@
         		<h3 th:text="#{userEdit.title}">Edit</h3>
 
 				<form method="POST" action="user.html" th:action="@{/user/save}" th:object="${user}">
-					<p th:field="${user.id}"/>
+					<input id="id" name="id" value="" th:value="*{id}" type="hidden"/>
 				
 					<p th:text="#{userEdit.username}">
 						User Name :
 					</p>
-						<input value="username" th:value="${user.username}"/>
+					<input id="username" value="" th:value="*{username}"/>
 					<p th:text="#{userEdit.password}">
 						Password :
 					</p>
-						<input value="password" th:value="${user.password}"/>
+					<input id="password" type="password" value="" th:value="*{password}"/>
 					<p th:text="#{userEdit.email}">
 						Email :
 					</p>
-						<input value="email" th:value="${user.emailAddress}"/>
+					<input id="email" value="" th:value="*{emailAddress}"/>
 					<p th:text="#{userEdit.firstName}">
 						First name :
 					</p>
-						<input value="firstName" th:value="${user.firstName}"/>
+					<input id="firstname" value="" th:value="*{firstName}"/>
 					<p th:text="#{userEdit.lastName}">
 						Last name :
 					</p>
-						<input value="lastName" th:value="${user.lastName}"/>
+					<input id="lastname" value="" th:value="*{lastName}"/>
 					
-					<input type="submit" value="Save" th:value="#{userEdit.submit}" />
+					<input id="submit" type="submit" value="Save" th:value="#{userEdit.submit}" />
+
+					<p th:if="${user.id}">
+						<a href="index.html" th:href="@{/user/delete/${user.id}}"
+							th:text="#{userEdit.delete}">
+							Delete this user
+						</a>
+					</p>
 				</form>
+			
 	
-				<p th:if="${user.id}">
-					<a href="user.html" th:href="@{/user/delete/${user.id}}"
-						th:text="#{userEdit.delete}">
-						Delete this user
-					</a>
-				</p>
 			</div>
 		</div>
 	</body>
