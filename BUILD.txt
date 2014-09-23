@@ -1,0 +1,22 @@
+ Building
+ --------
+
+ Clean compilation products:
+ 
+     mvn clean
+     
+ Compile:
+ 
+     mvn compile
+     
+ Run in a tomcat server:
+ 
+     mvn tomcat:run
+     
+ Once started, the application should be available at:
+ 
+     http://localhost:8080/HelloWorld
+
+
+
+ 
