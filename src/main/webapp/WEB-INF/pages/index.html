@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html ng-app="helloWorld"  xmlns="http://www.w3.org/1999/xhtml">
+      
+	<head>
+		<title> Hello World! </title>
+		<link rel="import" href="user.html"/>	
+	</head>
+
+	<body>
+
+		<div class="container" ng-controller="UserController">
+			<div ng-hide="showUserEdition()">
+    			<div class="one-third column">
+        			<h3>Actions</h3>
+        			<p><button id="new-user-button" type="button" ng-click="addUser()">New User</button></p>
+    			</div>
+
+	    		<div class="two-thirds column" >
+    	  	   		<h3>Hello world!</h3>
+
+        			<table>
+            			<thead>
+            				<tr>
+	            				<td>ID</td>
+    	        				<td>Name</td>
+        	    			</tr>
+            			</thead>
+            			<tbody> 
+						  <tr ng-repeat="user in users">
+					  		<td> <a href="" ng-click="accessUser(user)"> {{user.id}} </a></td>
+	    					<td>{{user.username}}</td>
+    	            	  </tr>
+						</tbody>
+        			</table>
+    			</div>
+    		</div>
+    		<div id="user-edit" ng-show="showUserEdition()">
+				<div ng-include="'user.html'"></div>			
+			</div>
+			
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+		
+		<script src="js/helloWorld.js"></script>
+	</body>
+</html>

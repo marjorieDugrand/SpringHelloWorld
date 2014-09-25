@@ -1,0 +1,36 @@
+<div ng-controller="UserController">
+	<div class="container">
+		<div class="two-thirds column" >
+	       	<h3 ng-show="isNewUser()"> Create New User </h3>
+			<h3 ng-hide="isNewUser()">Edit User </h3>
+			
+			<form class="simple-form" novalidate>
+				<input id="id" name="id"  type="hidden" ng-model="editingUser.id"/>			
+				<p> User Name : <br/>
+					<input id="username" type="text" class="form-control" placeholder="Username"
+					       ng-model="editingUser.username"/>
+				</p>
+				<p> Password : <br/>
+					<input id="password" type="password" class="form-control" placeholder="Password"
+					       ng-model="editingUser.password"/>
+				</p>
+				<p> Email : <br/>
+					<input id="email" type="text" class="form-control" placeholder="Email"
+					       ng-model="editingUser.emailAddress"/>
+				</p>
+				<p> First name : <br/>
+					<input id="firstname" type="text" class="form-control" placeholder="First name"
+					       ng-model="editingUser.firstName"/>
+				</p>
+				<p> Last name : <br/>
+					<input id="lastname" type="text" class="form-control" placeholder="Last name"
+					       ng-model="editingUser.lastName"/>
+				</p>
+			</form>
+			<button id="submit" type="button" ng-click="saveUser()"> Save </button>
+		</div>
+		<p ng-if="editingUser.id != null">
+			<button id="delete" ng-click="deleteUser()">Delete this user</button>
+		</p>
+	</div>
+</div>
